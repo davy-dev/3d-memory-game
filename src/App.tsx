@@ -37,6 +37,13 @@ function App() {
     }
   }, [gameState]);
 
+  useEffect(() => {
+    setGameState(defaultGameSet);
+    if ((gameState.length, cameraRef.current)) {
+      tl?.play();
+    }
+  }, []);
+  
   const tl = useCameraTraveling({
     cameraRef: cameraRef.current,
     setDisabled,
@@ -49,16 +56,6 @@ function App() {
     setIsRunning(false);
     reset();
   }
-
-  useEffect(() => {
-      setGameState(defaultGameSet)
-  }, []);
-
-  useEffect(() => {
-    if ((gameState.length, cameraRef.current)) {
-      tl?.play();
-    }
-  }, []);
 
   return (
     <div>
